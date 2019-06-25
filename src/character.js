@@ -8,6 +8,9 @@ Character.prototype = {
   get isAlive() {
     return this.health > 0;
   },
+  _takeDamage: function(damage) {
+    this.health -= damage;
+  },
 }
 
 module.exports = Character;

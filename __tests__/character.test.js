@@ -34,4 +34,12 @@ describe('character', () => {
       expect(character.isAlive).toBe(false);
     });
   });
+  describe('take damage', () => {
+    it('can take damage', () => {
+      const startingHealth = character.health;
+      const damage = 5;
+      character._takeDamage(damage);
+      expect(character.health).toBe(startingHealth - damage);
+    })
+  });
 });
