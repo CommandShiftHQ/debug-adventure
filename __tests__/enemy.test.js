@@ -3,7 +3,11 @@ const Enemy = require('../src/enemy');
 describe('enemy', () => {
   let enemy;
   let config;
+  let victim;
   beforeEach(() => {
+    victim = {
+      health: 10,
+    }
     config = {
       name: 'skeleton',
       health: 10,
@@ -27,4 +31,11 @@ describe('enemy', () => {
       expect(enemy.damage).toBe(config.damage);
     });
   });
+  describe('attack', () => {
+    it('can attack a target', () => {
+      const victimHealth = victim.health;
+      enemy.attack(victim);
+      expect(victim.health).toBe(victimHealth - enemy.damage);
+    });
+  })
 });
