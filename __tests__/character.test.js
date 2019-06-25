@@ -51,4 +51,12 @@ describe('character', () => {
       expect(character.health).toBe(0);
     })
   });
+  describe('healing', () => {
+    it('can recover health', () => {
+      character.health = 1;
+      const potion = 9;
+      character._heal(potion);
+      expect(character.health).toBe(10);
+    });
+  });
 });

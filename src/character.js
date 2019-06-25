@@ -15,6 +15,9 @@ Character.prototype = {
       this.health = 0;
     }
   },
+  _heal: function(health) {
+    this.health += health;
+  },
 }
 
 module.exports = Character;
