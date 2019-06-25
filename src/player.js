@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 const Character = require('./character');
 
 function Player(config) {
@@ -13,5 +14,8 @@ Object.defineProperty(Player.prototype, 'constructor', {
   writable: true,
 });
 
+Player.prototype.equip = function (weapon) {
+  this.equippedWeapon = weapon;
+};
 
 module.exports = Player;
