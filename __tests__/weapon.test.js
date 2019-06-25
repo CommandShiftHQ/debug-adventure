@@ -5,8 +5,9 @@ describe('constructor function', () => {
   let config;
   beforeEach(() => {
     config = {
-      name: 'bronze sword'
-    }
+      name: 'bronze sword',
+      damage: 3,
+    };
     weapon = new Weapon(config);
   });
   it('returns an object', () => {
@@ -15,4 +16,7 @@ describe('constructor function', () => {
   it('has a name', () => {
     expect(weapon.name).toBe(config.name);
   })
+  it('has a damage rating', () => {
+    expect(weapon.damage).toBe(config.damage);
+  });
 });
