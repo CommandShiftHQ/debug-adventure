@@ -21,6 +21,6 @@ describe('constructor function', () => {
     expect(weapon.damage).toBe(config.damage);
   });
   it('has an attack type', () => {
-    expect(weapon.attackType).toBe('slashes');
+    expect(weapon.attackType).toBe(config.attackType);
   });
 });
