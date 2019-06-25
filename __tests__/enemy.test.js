@@ -9,6 +9,7 @@ describe('enemy', () => {
       health: 10,
       maxHealth: 10,
       dialogue: 'rattle',
+      damage: 2,
     }
     enemy = new Enemy(config);
   });
@@ -22,5 +23,8 @@ describe('enemy', () => {
       expect(enemy.maxHealth).toBe(config.maxHealth);
       expect(enemy.dialogue).toBe(config.dialogue);
     })
+    it('has a damage rating', () => {
+      expect(enemy.damage).toBe(config.damage);
+    });
   });
 });
