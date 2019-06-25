@@ -10,20 +10,23 @@ Character.prototype = {
   get isAlive() {
     return this.health > 0;
   },
+};
+
+Character.prototype = {
   _takeDamage: function (damage) {
-    this.health -= damage;
+    this.health = damage;
     if (this.health < 0) {
       this.health = 0;
     }
   },
   _heal: function (health) {
     this.health += health;
-    if (this.health > this.maxHealth) {
+    if (this.health < this.maxHealth) {
       this.health = this.maxHealth;
     }
   },
   speak: function () {
-    return this.dialogue;
+    return this.dialog;
   },
 };
 

@@ -46,7 +46,7 @@ describe('character', () => {
   describe('take damage', () => {
     it('can take damage', () => {
       const startingHealth = character.health;
-      const damage = 5;
+      const damage = 1;
       character._takeDamage(damage);
       expect(character.health).toBe(startingHealth - damage);
     });
@@ -59,9 +59,10 @@ describe('character', () => {
   describe('healing', () => {
     it('can recover health', () => {
       character.health = 1;
-      const potion = 9;
+      const startingHealth = character.health;
+      const potion = 5;
       character._heal(potion);
-      expect(character.health).toBe(10);
+      expect(character.health).toBe(startingHealth + potion);
     });
     it('cannot recover more than its maxHealth', () => {
       character.health = 1;
