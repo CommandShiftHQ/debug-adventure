@@ -21,6 +21,9 @@ Character.prototype = {
       this.health = this.maxHealth;
     }
   },
+  speak: function() {
+    return this.dialogue;
+  },
 }
 
 module.exports = Character;

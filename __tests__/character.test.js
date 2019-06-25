@@ -29,6 +29,11 @@ describe('character', () => {
       expect(character.dialogue).toBe(config.dialogue);
     });
   });
+  describe('speak', () => {
+    it('returns its dialogue', () => {
+      expect(character.speak()).toBe(config.dialogue);
+    });
+  })
   describe('isAlive', () => {
     it('returns alive if health is above 0', () => {
       expect(character.isAlive).toBe(true);
