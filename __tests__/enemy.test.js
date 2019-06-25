@@ -9,6 +9,7 @@ describe('enemy', () => {
     victim = {
       name: 'Townsperson',
       health: 10,
+      maxHealth: 10,
       _takeDamage: function (damage) {
         this.health -= damage;
       },
@@ -38,9 +39,8 @@ describe('enemy', () => {
   });
   describe('attack', () => {
     it('can attack a target', () => {
-      const victimHealth = victim.health;
       enemy.attack(victim);
-      expect(victim.health).toBe(victimHealth - enemy.damage);
+      expect(victim.health).toBe(victim.maxHealth - enemy.damage);
     });
     it('can describe its attack', () => {
       const attackLine = `${enemy.name} lets out a ${enemy.dialogue}, and hits ${victim.name} for ${config.damage} damage!`;

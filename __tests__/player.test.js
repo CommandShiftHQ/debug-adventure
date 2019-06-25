@@ -10,6 +10,7 @@ describe('constructor function', () => {
     trainingDummy = {
       name: 'Buster',
       health: 10,
+      maxHealth: 10,
       _takeDamage: function (damage) {
         this.health -= damage;
       },
@@ -46,11 +47,16 @@ describe('constructor function', () => {
     });
   });
   describe('attack', () => {
-    it('can attack with a weapon', () => {
-      const dummyHealth = trainingDummy.health;
+    beforeEach(() => {
       player.equip(sword);
       player.attack(trainingDummy);
-      expect(trainingDummy.health).toBe(dummyHealth - sword.damage);
+    });
+    it('can attack with a weapon', () => {
+      expect(trainingDummy.health).toBe(trainingDummy.maxHealth - sword.damage);
+    });
+    it('can describe its attack', () => {
+      const attackLine = `${player.name} lets out a ${player.dialogue}, and hits ${trainingDummy.name} with ${sword.name} for ${sword.damage} damage!`;
+      expect(player.attack(trainingDummy)).toBe(attackLine);
     });
   });
 });
