@@ -17,6 +17,9 @@ Character.prototype = {
   },
   _heal: function(health) {
     this.health += health;
+    if (this.health > this.maxHealth) {
+      this.health = this.maxHealth;
+    }
   },
 }
 

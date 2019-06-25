@@ -58,5 +58,11 @@ describe('character', () => {
       character._heal(potion);
       expect(character.health).toBe(10);
     });
+    it('cannot recover more than its maxHealth', () => {
+      character.health = 1;
+      const potion = 100;
+      character._heal(potion);
+      expect(character.health).toBe(10);
+    });
   });
 });
