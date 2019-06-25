@@ -25,9 +25,13 @@ describe('character', () => {
       expect(character.dialogue).toBe(config.dialogue);
     });
   });
-  describe('alive/dead', () => {
+  describe('isAlive', () => {
     it('returns alive if health is above 0', () => {
       expect(character.isAlive).toBe(true);
+    });
+    it('returns dead if health is 0', () => {
+      character.health = 0;
+      expect(character.isAlive).toBe(false);
     });
   });
 });
