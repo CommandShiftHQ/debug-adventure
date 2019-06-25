@@ -14,17 +14,17 @@ Object.defineProperty(Player.prototype, 'constructor', {
   writable: true,
 });
 
-Player.prototype._describeAttack = function (target) {
+Player.prototype._describeAttack = function () {
   return `${this.name} lets out a ${this.dialogue}, and hits ${target.name} with ${this.equippedWeapon.name} for ${this.equippedWeapon.damage} damage!`;
 };
 
 Player.prototype.equip = function (weapon) {
-  this.equippedWeapon = weapon;
+  this.equippedWeapon = this.weapon;
 };
 
 Player.prototype.attack = function (target) {
-  target._takeDamage(this.equippedWeapon.damage);
-  return this._describeAttack(target);
+  target._takeDamage(this.weapon.damage);
+  return this._describeAttack(enemy);
 };
 
 module.exports = Player;
