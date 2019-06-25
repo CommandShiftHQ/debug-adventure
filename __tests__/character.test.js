@@ -41,5 +41,10 @@ describe('character', () => {
       character._takeDamage(damage);
       expect(character.health).toBe(startingHealth - damage);
     })
+    it('cannot be damaged to less than 0', () => {
+      const damage = 100;
+      character._takeDamage(damage);
+      expect(character.health).toBe(0);
+    })
   });
 });

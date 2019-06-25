@@ -10,6 +10,9 @@ Character.prototype = {
   },
   _takeDamage: function(damage) {
     this.health -= damage;
+    if (this.health < 0) {
+      this.health = 0;
+    }
   },
 }
 
