@@ -1,10 +1,19 @@
+/* eslint-disable func-names */
 const Player = require('../src/player');
 
 describe('constructor function', () => {
   let player;
   let config;
   let sword;
+  let trainingDummy;
   beforeEach(() => {
+    trainingDummy = {
+      name: 'Buster',
+      health: 10,
+      _takeDamage: function (damage) {
+        this.health -= damage;
+      },
+    };
     sword = {
       name: 'bronze sword',
       damage: 3,
@@ -34,6 +43,14 @@ describe('constructor function', () => {
     it('can equip a weapon', () => {
       player.equip(sword);
       expect(player.equippedWeapon).toEqual(sword);
+    });
+  });
+  describe('attack', () => {
+    it('can attack with a weapon', () => {
+      const dummyHealth = trainingDummy.health;
+      player.equip(sword);
+      player.attack(trainingDummy);
+      expect(trainingDummy.health).toBe(dummyHealth - sword.damage);
     });
   });
 });

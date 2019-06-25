@@ -18,4 +18,8 @@ Player.prototype.equip = function (weapon) {
   this.equippedWeapon = weapon;
 };
 
+Player.prototype.attack = function (target) {
+  target._takeDamage(this.equippedWeapon.damage);
+}
+
 module.exports = Player;
