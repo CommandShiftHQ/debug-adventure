@@ -4,4 +4,4 @@ function Weapon(config) {
   const attackType = attackType;
 }
 
-module.exports = Weapon;
+module.exports = weapon;
