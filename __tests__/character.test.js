@@ -7,6 +7,7 @@ describe('constructor function', () => {
     config = {
       name: 'npc',
       health: 10,
+      dialogue: 'hello',
     }
     character = new Character(config);
   });
@@ -19,4 +20,7 @@ describe('constructor function', () => {
   it('has health', () => {
     expect(character.health).toBe(config.health);
   })
+  it('has dialogue', () => {
+    expect(character.dialogue).toBe(config.dialogue);
+  });
 });
