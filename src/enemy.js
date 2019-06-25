@@ -1,4 +1,5 @@
-const Character = require('./character'); 
+/* eslint-disable func-names */
+const Character = require('./character');
 
 function Enemy(config) {
   Character.call(this, config);
@@ -7,13 +8,19 @@ function Enemy(config) {
 
 Enemy.prototype = Object.create(Character.prototype);
 
-Object.defineProperty(Enemy.prototype, 'constructor', { 
-  value: Enemy, 
+Object.defineProperty(Enemy.prototype, 'constructor', {
+  value: Enemy,
   enumerable: false, // so that it does not appear in 'for in' loop
-  writable: true });
+  writable: true,
+});
 
-Enemy.prototype.attack = function(target) {
-  target.health -= this.damage;
-}
+Enemy.prototype._describeAttack = function (target) {
+  return `${this.name} lets out a ${this.dialogue}, and hits ${target.name} for ${this.damage} damage!`;
+};
+
+Enemy.prototype.attack = function (target) {
+  target._takeDamage(this.damage);
+  return this._describeAttack(target);
+};
 
 module.exports = Enemy;

@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 const Enemy = require('../src/enemy');
 
 describe('enemy', () => {
@@ -6,15 +7,19 @@ describe('enemy', () => {
   let victim;
   beforeEach(() => {
     victim = {
+      name: 'Townsperson',
       health: 10,
-    }
+      _takeDamage: function (damage) {
+        this.health -= damage;
+      },
+    };
     config = {
       name: 'skeleton',
       health: 10,
       maxHealth: 10,
       dialogue: 'rattle',
       damage: 2,
-    }
+    };
     enemy = new Enemy(config);
   });
   describe('constructor function', () => {
@@ -26,7 +31,7 @@ describe('enemy', () => {
       expect(enemy.health).toBe(config.health);
       expect(enemy.maxHealth).toBe(config.maxHealth);
       expect(enemy.dialogue).toBe(config.dialogue);
-    })
+    });
     it('has a damage rating', () => {
       expect(enemy.damage).toBe(config.damage);
     });
@@ -37,5 +42,9 @@ describe('enemy', () => {
       enemy.attack(victim);
       expect(victim.health).toBe(victimHealth - enemy.damage);
     });
-  })
+    it('can describe its attack', () => {
+      const attackLine = `${enemy.name} lets out a ${enemy.dialogue}, and hits ${victim.name} for ${config.damage} damage!`;
+      expect(enemy.attack(victim)).toBe(attackLine);
+    });
+  });
 });
