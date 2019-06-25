@@ -7,6 +7,7 @@ describe('constructor function', () => {
     config = {
       name: 'bronze sword',
       damage: 3,
+      attackType: 'slashes',
     };
     weapon = new Weapon(config);
   });
@@ -18,5 +19,8 @@ describe('constructor function', () => {
   })
   it('has a damage rating', () => {
     expect(weapon.damage).toBe(config.damage);
+  });
+  it('has an attack type', () => {
+    expect(weapon.attackType).toBe('slashes');
   });
 });
