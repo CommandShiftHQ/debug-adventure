@@ -7,6 +7,7 @@ describe('character', () => {
     config = {
       name: 'npc',
       health: 10,
+      maxHealth: 10,
       dialogue: 'hello',
     }
     character = new Character(config);
@@ -21,6 +22,9 @@ describe('character', () => {
     it('has health', () => {
       expect(character.health).toBe(config.health);
     })
+    it('has a maximum health', () => {
+      expect(character.maxHealth).toBe(config.maxHealth);
+    });
     it('has dialogue', () => {
       expect(character.dialogue).toBe(config.dialogue);
     });

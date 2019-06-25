@@ -1,6 +1,7 @@
 function Character(config) {
   this.name = config.name;
   this.health = config.health;
+  this.maxHealth = config.maxHealth;
   this.dialogue = config.dialogue;
 };
 
