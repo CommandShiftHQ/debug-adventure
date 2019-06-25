@@ -1,5 +1,5 @@
 /* eslint-disable func-names */
-function Character(config) {
+function Character() {
   this.name = config.name;
   this.health = config.health;
   this.maxHealth = config.maxHealth;
