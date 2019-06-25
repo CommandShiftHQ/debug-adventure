@@ -1,6 +1,6 @@
 const Character = require('../src/character');
 
-describe('constructor function', () => {
+describe('character', () => {
   let character;
   let config;
   beforeEach(() => {
@@ -11,16 +11,23 @@ describe('constructor function', () => {
     }
     character = new Character(config);
   });
-  it('returns an object', () => {
-    expect(character).toBeInstanceOf(Object);
+  describe('constructor function', () => {
+    it('returns an object', () => {
+      expect(character).toBeInstanceOf(Object);
+    });
+    it('has a name', () => {
+      expect(character.name).toBe(config.name);
+    });
+    it('has health', () => {
+      expect(character.health).toBe(config.health);
+    })
+    it('has dialogue', () => {
+      expect(character.dialogue).toBe(config.dialogue);
+    });
   });
-  it('has a name', () => {
-    expect(character.name).toBe(config.name);
-  });
-  it('has health', () => {
-    expect(character.health).toBe(config.health);
-  })
-  it('has dialogue', () => {
-    expect(character.dialogue).toBe(config.dialogue);
+  describe('alive/dead', () => {
+    it('returns alive if health is above 0', () => {
+      expect(character.isAlive).toBe(true);
+    });
   });
 });

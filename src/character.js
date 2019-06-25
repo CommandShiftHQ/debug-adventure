@@ -4,4 +4,10 @@ function Character(config) {
   this.dialogue = config.dialogue;
 };
 
+Character.prototype = {
+  get isAlive() {
+    return this.health > 0;
+  },
+}
+
 module.exports = Character;
