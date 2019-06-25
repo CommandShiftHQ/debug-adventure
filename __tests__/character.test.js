@@ -9,7 +9,7 @@ describe('character', () => {
       health: 10,
       maxHealth: 10,
       dialogue: 'hello',
-    }
+    };
     character = new Character(config);
   });
   describe('constructor function', () => {
@@ -21,7 +21,7 @@ describe('character', () => {
     });
     it('has health', () => {
       expect(character.health).toBe(config.health);
-    })
+    });
     it('has a maximum health', () => {
       expect(character.maxHealth).toBe(config.maxHealth);
     });
@@ -33,7 +33,7 @@ describe('character', () => {
     it('returns its dialogue', () => {
       expect(character.speak()).toBe(config.dialogue);
     });
-  })
+  });
   describe('isAlive', () => {
     it('returns alive if health is above 0', () => {
       expect(character.isAlive).toBe(true);
@@ -49,12 +49,12 @@ describe('character', () => {
       const damage = 5;
       character._takeDamage(damage);
       expect(character.health).toBe(startingHealth - damage);
-    })
+    });
     it('cannot be damaged to less than 0', () => {
       const damage = 100;
       character._takeDamage(damage);
       expect(character.health).toBe(0);
-    })
+    });
   });
   describe('healing', () => {
     it('can recover health', () => {

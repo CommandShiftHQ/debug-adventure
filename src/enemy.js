@@ -10,7 +10,7 @@ Enemy.prototype = Object.create(Character.prototype);
 
 Object.defineProperty(Enemy.prototype, 'constructor', {
   value: Enemy,
-  enumerable: false, // so that it does not appear in 'for in' loop
+  enumerable: false,
   writable: true,
 });
 

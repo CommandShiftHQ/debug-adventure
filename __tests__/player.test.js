@@ -21,4 +21,7 @@ describe('constructor function', () => {
     expect(player.maxHealth).toBe(config.maxHealth);
     expect(player.dialogue).toBe(config.dialogue);
   });
+  it('has a weapon slot', () => {
+    expect(player).toHaveProperty('equippedWeapon');
+  });
 });

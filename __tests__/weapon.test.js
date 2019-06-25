@@ -13,10 +13,10 @@ describe('constructor function', () => {
   });
   it('returns an object', () => {
     expect(weapon).toBeInstanceOf(Object);
-  })
+  });
   it('has a name', () => {
     expect(weapon.name).toBe(config.name);
-  })
+  });
   it('has a damage rating', () => {
     expect(weapon.damage).toBe(config.damage);
   });
