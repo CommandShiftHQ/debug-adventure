@@ -5,8 +5,9 @@ Debugging practice for `node.js`.
 ## getting started
 
 Clone this repository:
+
 ```bash
-git clone git@github.com:MCRcodes/debug-adventure.git
+git clone https://github.com/CommandShiftHQ/debug-adventure.git
 ```
 
 Open the repository:
@@ -40,8 +41,9 @@ You will see that most of the tests fail. Your challenge is to find the bugs in 
 🔥Hot Tip 1: Start by fixing the errors in the Weapon class 🔥  
 🔥Hot Tip 2: Next fix the errors in the Character class 🔥
 
-Remember: 
-  - Always read the error messages!
-  - Google any error messages you don't understand.
+Remember:
+
+- Always read the error messages!
+- Google any error messages you don't understand.
 
 # Good Luck!
