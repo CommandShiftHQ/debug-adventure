@@ -1,4 +1,4 @@
-# Manchester Codes Debugging Adventure
+# Command Shift Debugging Adventure
 
 Debugging practice for `node.js`.
 
