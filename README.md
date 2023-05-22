@@ -16,16 +16,17 @@ Open the repository:
   cd debug-adventure/
 ```
 
-Install dependencies:
-
-```bash
-  npm install
-```
 
 Switch to the bugged branch:
 
 ```bash
   git checkout bugs
+```
+
+Install dependencies:
+
+```bash
+  npm install
 ```
 
 Run tests:
